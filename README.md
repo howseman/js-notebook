@@ -1,2 +1,2 @@
 # js-notebook
-Some personal notes about JS 
+Some personal notes about JS/ES5+
