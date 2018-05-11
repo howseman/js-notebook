@@ -40,7 +40,7 @@ class TaskCollection {
 }
 
 let tc = new TaskCollection([
-    new Task, new Task, new Task
+  new Task, new Task, new Task
 ]);
 
 console.log(tc.newObjetSeeding('Jhon', '12345'));
