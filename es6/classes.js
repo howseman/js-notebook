@@ -15,7 +15,7 @@ class TaskCollection {
     innerScopeFunction();
     // This function IS HOISTED
     function innerScopeFunction() {
-      // NOTE: In this case 'this' is NOT in the class scope, is in the innerScopeFunction scope
+      // NOTE: In this case 'this' is NOT in the class scope, is the innerScopeFunction scope
       console.log(this); // undefined
     }
 

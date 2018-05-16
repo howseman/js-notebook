@@ -3,6 +3,7 @@ var person = {
   age: 23
 };
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Data_property
 // if the property (2nd param) doesn't exist in the target object (1st param),
 // a new one is created. NOTE: when defineProperty is used, it is important
 // to specify all attributes because boolean attributes automatically
@@ -14,6 +15,7 @@ Object.defineProperty(person, 'name', {
   writable: false, // default: false
   value: 'Peter', // sets the property value
   // For accessor properties
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Accessor_property
   // get: function() { return this._propertyName },
   // set: function(value) { this._propertyName = value },
 });
