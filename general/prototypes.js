@@ -10,9 +10,9 @@ console.log(Object.prototype.hasOwnProperty('hasOwnProperty')); // true
 
 console.log(book.toString()); // [object Object]
 book.toString = function() {
-  return 'custom toString function';
+  return 'from custom toString function';
 };
-console.log(book.toString()); // custom toString function
+console.log(book.toString()); // from custom toString function
 
 delete book.toString;
 console.log(book.toString(), '\n'); // [object Object]

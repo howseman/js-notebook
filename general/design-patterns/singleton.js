@@ -1,32 +1,33 @@
-var ClassA = function (name) {
-  this.name = name;
-};
+var printer = (function () {
 
-var Singleton = (function () {
-  var instance;
+  var printerInstance;
 
-  function createInstance(className, instanceParams) {
-    try {
-      if (instanceParams && Array.isArray(instanceParams)) {
-        instance = new className(arguments[1]);
-      } else {
-        instance = new className;
-      }
-      return instance;
-    } catch (error) {
-      throw (error.message);
+  function create() {
+    function print() {
+      // underlying printer mechanics
     }
+
+    function turnOn() {
+      // warm up
+      // check for paper
+    }
+
+    return {
+      // public + private states and behaviors
+      print: print,
+      turnOn: turnOn
+    };
   }
 
   return {
-    getInstance: function (className, instanceParams) {
-      return instance || createInstance(className, instanceParams);
+    getInstance: function () {
+      if (!printerInstance) {
+        printerInstance = create();
+      }
+      return printerInstance;
     }
-  }
+  };
 })();
 
-var instance1 = Singleton.getInstance(ClassA, ['Jhon']);
-var instance2 = Singleton.getInstance(ClassA, ['Luke']);
-console.log('instance1', instance1);
-console.log('instance2', instance2);
-console.log('Same instance?', (instance1 === instance2));
+var officePrinter = printer.getInstance();
+console.log(officePrinter);
